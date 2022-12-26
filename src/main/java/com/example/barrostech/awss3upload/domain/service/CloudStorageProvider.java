@@ -6,4 +6,5 @@ import java.net.URL;
 
 public interface CloudStorageProvider {
     URL generatePresignedUploadUrl(FileReference fileReference);
+    URL generatePresignedDownloadUrl(FileReference fileReference);
 }

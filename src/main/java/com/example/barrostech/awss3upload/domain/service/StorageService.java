@@ -21,4 +21,10 @@ public class StorageService {
         URL presignedUploadUrl = cloudStorageProvider.generatePresignedUploadUrl(fileReference);
         return new UploadRequestResult(fileReference.getId(),presignedUploadUrl.toString());
     }
+
+    public DownloadRequestResult generateDownloadUrl(FileReference fileReference) {
+        Objects.requireNonNull(fileReference);
+        URL url = cloudStorageProvider.generatePresignedDownloadUrl(fileReference);
+        return new DownloadRequestResult(url.toString());
+    }
 }
